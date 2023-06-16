@@ -1,0 +1,229 @@
+@import "./variables";
+
+@mixin flexCenter($direction) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+}
+
+.sign-up-section {
+  @include flexCenter(column);
+  margin: 0 1rem;
+}
+
+.sign-up-container {
+  display: grid;
+  place-items: center;
+  width: 100%;
+
+  .img-container {
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .desktop-img {
+      display: none;
+    }
+  }
+
+  article {
+    @include flexColumn;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+
+    .list-info {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+  }
+}
+
+/* Email Form */
+.email-form {
+  width: 100%;
+
+  .form-row {
+    .label-container {
+      width: 100%;
+      margin-top: 0.75rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      label {
+        width: 100%;
+        font-weight: 700;
+        font-size: 0.9rem;
+      }
+
+      .feedback {
+        display: inline;
+        white-space: nowrap;
+        padding-right: 0.25rem;
+        font-size: 1rem;
+
+        .invalid-feedback {
+          color: $clr-tomato;
+        }
+      }
+    }
+
+    input {
+      padding: 1rem 1.25rem;
+      margin: 0.75rem 0 1.5rem 0;
+      border-radius: 0.35rem;
+      border: 0.5px solid $clr-Grey;
+
+      outline: none;
+      font-size: 1.1rem;
+      box-shadow: $light--shadow;
+
+      &:focus {
+        outline: 1px solid $clr-DarkSlateGrey !important;
+        border: 1px solid $clr-DarkSlateGrey !important;
+      }
+    }
+  }
+}
+
+.is-invalid {
+  background: hsla(5, 100%, 90%, 0.7);
+  border: 1px solid $clr-tomato !important;
+  color: hsla(4, 100%, 50%, 0.7);
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  border-radius: 0.35rem;
+  color: $clr-White;
+  outline: none;
+  border: none;
+  background: $clr-DarkSlateGrey;
+  box-shadow: $light--shadow;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: $transition;
+  cursor: pointer;
+  &:hover,
+  &:focus,
+  &:focus-visible {
+    background: $clr-tomato;
+  }
+}
+
+/* submission success section */
+
+.section-success {
+  display: none;
+  margin: 0 auto;
+  max-width: 280px;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+
+  .success-content {
+    @include flexColumn;
+    justify-content: center;
+    padding: 1rem;
+    min-height: 90vh;
+    color: $clr-DarkSlateGrey;
+
+    img {
+      align-self: flex-start;
+      height: 50px;
+    }
+
+    h1 {
+      font-size: 1.75rem;
+      margin: 0.5rem 0 1rem 0;
+    }
+    p {
+      line-height: 1.8;
+    }
+  }
+
+  button {
+    @extend .submit-btn;
+    @include flexCenter(row);
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    background: $clr-CharcoalGrey !important;
+  }
+  .sign-up-container {
+    width: 80%;
+    max-width: fit-content;
+    box-shadow: $dark--shadow;
+    background: $clr-White;
+    border-radius: 0.5rem;
+
+    margin: 1.5rem auto;
+    justify-content: space-between;
+    grid-auto-flow: dense;
+    grid-template-columns: 1fr 1fr;
+
+    .img-container {
+      grid-column: 2;
+      grid-row: 1;
+
+      .desktop-img {
+        display: block;
+        padding: 1rem;
+      }
+
+      .mobile-img {
+        display: none;
+      }
+    }
+
+    article {
+      grid-column: 1;
+      grid-row: 1;
+    }
+  }
+
+  .success-container {
+    @include flexCenter(column);
+    background: $clr-White;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    border-radius: 0.75rem;
+    max-width: fit-content;
+    max-height: fit-content;
+    padding: 1rem;
+    box-shadow: $dark--shadow;
+
+    .success-content {
+      min-height: auto !important;
+    }
+  }
+}

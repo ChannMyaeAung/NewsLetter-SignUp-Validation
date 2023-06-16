@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./styles/style.css" />
+
+    <title>
+      Frontend Mentor | Newsletter sign-up form with success message
+    </title>
+  </head>
+  <body>
+    <!-- Sign-up form start -->
+    <section class="sign-up-section">
+      <div class="sign-up-container">
+        <div class="img-container">
+          <img
+            src="./assets/images/illustration-sign-up-mobile.svg"
+            alt="hero-img"
+            class="mobile-img"
+          />
+
+          <img
+            src="./assets/images/illustration-sign-up-desktop.svg"
+            alt="hero-img"
+            class="desktop-img"
+          />
+        </div>
+
+        <article>
+          <h2>Stay updated!</h2>
+          <p>Join 60,000+ product managers receiving monthly updates on:</p>
+
+          <div class="list-info">
+            <img
+              src="./assets/images/icon-list.svg"
+              alt="check-icon"
+              class="check-icon"
+            />
+            <p>Product discovery and building what matters</p>
+          </div>
+
+          <div class="list-info">
+            <img
+              src="./assets/images/icon-list.svg"
+              alt="check-icon"
+              class="check-icon"
+            />
+            <p>Measuring to ensure updates are a success</p>
+          </div>
+
+          <div class="list-info">
+            <img
+              src="./assets/images/icon-list.svg"
+              alt="check-icon"
+              class="check-icon"
+            />
+            <p>And much more!</p>
+          </div>
+
+          <form class="email-form" novalidate id="email-form">
+            <div class="form-row">
+              <div class="label-container">
+                <label for="email">Email Address</label>
+                <div class="feedback">
+                  <div class="invalid-feedback">Valid email required</div>
+                  <div class="valid-feedback">Correct email</div>
+                </div>
+              </div>
+
+              <input
+                type="email"
+                name="email"
+                class="user-email form-control"
+                id="email"
+                placeholder="email@company.com"
+                required
+              />
+            </div>
+
+            <button type="submit" class="submit-btn">
+              Subscribe to monthly newsletter
+            </button>
+          </form>
+        </article>
+      </div>
+    </section>
+
+    <!-- Sign-up form end -->
+
+    <!-- Success message start -->
+
+    <section class="section-success">
+      <div class="success-container">
+        <div class="success-content">
+          <img
+            src="./assets/images/icon-list.svg"
+            alt="icon-list"
+            class="check-icon"
+          />
+
+          <h1>Thanks for subscribing!</h1>
+          <p class="success-desc"></p>
+        </div>
+
+        <button class="dismiss-btn">Dismiss message</button>
+      </div>
+    </section>
+
+    <!-- Success message end -->
+
+    <!-- Bootstrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- JS -->
+    <script src="index.js" defer type="module"></script>
+  </body>
+</html>
